@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
 
 export default class CustomInput extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            value: '',
-        };
-    }
     handleChange(e) {
-        this.setState({ value: e.currentTarget.value });
+        if (this.props.onChange) {
+            this.props.onChange(e.currentTarget.value);
+        }
     }
     render() {
         return (
