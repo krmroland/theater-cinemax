@@ -1,0 +1,8 @@
+{
+    "categories": {
+        "twinSeat": { "name": "Twin Seat", "price": 25000 },
+        "veryVip": { "name": "Very VIP", "price": 100000 },
+        "vip": { "name": "VIP", "price": 50000 },
+        "economy": { "name": "Economy", "price": 20000 }
+    }
+}
