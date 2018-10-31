@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.2/workbox-sw.js");
 
 importScripts(
-  "/theater-cinemax/precache-manifest.465f72685b1c26c963770edd9c848c37.js"
+  "/theater-cinemax/precache-manifest.0d21973f5895c9911825cb1310025ca5.js"
 );
 
 workbox.clientsClaim();
