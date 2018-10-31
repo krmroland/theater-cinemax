@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 
 export default class TheaterSeat extends Component {
-    componentDidMount() {
-        console.log(this.props.seat);
-    }
     render() {
         const { seat } = this.props;
 

@@ -1,5 +1,5 @@
 import Theater from './components/Theater';
-import Booking from './components/Booking';
+import Booking from './containers/Booking';
 import Statistics from './components/Statistics';
 export default [
     {

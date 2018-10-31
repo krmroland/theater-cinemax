@@ -1,15 +1,18 @@
 import Seat from './Seat';
-
+import { createArray } from '../utils';
+import chunk from 'lodash/chunk';
 class Theater {
     /**
      * Creates an instance of the Theater class
      * @return {Theater}
      */
     constructor() {
-        //create 16 rows from A up to
-        this.rows = this.createArray(16, this.convertNumberToAlphabet);
-        this.columns = this.createArray(20);
+        //create 16 rows from A up to P
+        this.rows = createArray(16, this.convertNumberToAlphabet);
+        this.columns = createArray(20);
+        this.bookedSeats = {};
         this.setSeats();
+        this.book = this.book.bind(this);
     }
     /**
      * Makes and sets the seats
@@ -42,15 +45,7 @@ class Theater {
         // since A is 65, we can add 64 to every number
         return String.fromCharCode(number + 64);
     }
-    /**
-     * Creates an array of a given Length
-     * @param  {Number}   length
-     * @param  {Function|null} callback
-     * @return {Array}
-     */
-    createArray(length, callback = number => number) {
-        return Array.from({ length }, (number, index) => callback(++index));
-    }
+
     /**
      * Gets a seat located in a given position
      * @param  {String} row
@@ -60,7 +55,27 @@ class Theater {
     getSeatInPositon(row, column) {
         return this.seats[row + column];
     }
+    /**
+     * Gets a seat in an available position
+     * @param  {String|Null} category
+     * @return {Array}
+     */
+    getAvailableSeatsForCategory(category) {
+        const seats = Object.values(this.seats).filter(seat => {
+            //look out for seats in the given category  and those that are not booked
+            return (
+                seat.category === category &&
+                !this.bookedSeats[seat.key] &&
+                seat.isAvailable &&
+                !seat.isReserved
+            );
+        });
+        return category === 'twinSeat' ? chunk(seats, 2) : seats;
+    }
+    book(seat) {
+        seat.isAvailable = false;
+        this.bookedSeats = { ...this.bookedSeats, [seat.key]: seat };
+    }
 }
 
-//export the same instance to all apps
-export default new Theater();
+export default Theater;

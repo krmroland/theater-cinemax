@@ -1,0 +1,28 @@
+.text-center {
+    text-align: center;
+}
+.text-primary {
+    color: $primary;
+}
+.d-flex {
+    display: flex;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.jcc {
+    justify-content: center;
+}
+
+.mb-1 {
+    margin-bottom: 1em;
+}
+.bg-gray {
+    background-color: $gray-light;
+}
+.mt-1 {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}

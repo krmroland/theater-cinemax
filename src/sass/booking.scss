@@ -1,0 +1,19 @@
+.booking {
+    display: flex;
+
+    .booking-form {
+        flex: 0 0 25%;
+        position: relative;
+    }
+    .booking-seat-category {
+        margin-left: 2em;
+        flex: 0 0 75%;
+    }
+
+    .booked-seats {
+        position: absolute;
+        height: 200px;
+        width: 100%;
+        overflow-y: auto;
+    }
+}

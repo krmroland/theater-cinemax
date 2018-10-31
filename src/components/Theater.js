@@ -1,15 +1,9 @@
 import React, { Component } from 'react';
 import TheaterColumn from './TheaterColumn';
-import theater from '../core/Theater';
-export default class Theater extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            theater,
-        };
-    }
-    componentDidMount() {}
+import { connect } from 'react-redux';
+class Theater extends Component {
     render() {
+        const { theater } = this.props;
         return (
             <div>
                 {theater.rows.map(row => (
@@ -19,3 +13,5 @@ export default class Theater extends Component {
         );
     }
 }
+const mapStateToProps = ({ theater }) => ({ theater });
+export default connect(mapStateToProps)(Theater);
