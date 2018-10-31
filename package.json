@@ -2,6 +2,7 @@
   "name": "theatre-cinemax",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://krmroland.github.io/theater-cinemax/",
   "dependencies": {
     "lodash": "^4.17.11",
     "react": "^16.6.0",
@@ -12,6 +13,8 @@
     "redux": "^4.0.1"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -20,12 +23,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
+  "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"],
   "devDependencies": {
     "node-sass": "^4.9.4",
     "redux-logger": "^3.0.6"
