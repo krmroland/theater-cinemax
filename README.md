@@ -1,6 +1,9 @@
 ## Cinemax theater
 
 [![Build Status](https://travis-ci.org/krmroland/theater-cinemax.svg?branch=develop)](https://travis-ci.org/krmroland/theater-cinemax)
+[![Coverage Status](https://coveralls.io/repos/github/krmroland/theater-cinemax/badge.svg?branch=ft-add-tests)](https://coveralls.io/github/krmroland/theater-cinemax?branch=ft-add-tests)
+[![Maintainability](https://api.codeclimate.com/v1/badges/b4ed099b5416f0c97a3f/maintainability)](https://codeclimate.com/github/krmroland/theater-cinemax/maintainability)
+[![BCH compliance](https://bettercodehub.com/edge/badge/krmroland/theater-cinemax?branch=master)](https://bettercodehub.com/)
 
 ### [DEMO](https://krmroland.github.io/theater-cinemax/)
 

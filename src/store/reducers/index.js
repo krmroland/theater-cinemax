@@ -106,8 +106,10 @@ class AppReducer {
                 : Theater.book(seat);
         });
         return {
-            ...initialState,
+            ...this.state,
             cart: {},
+            toBookSeats: 0,
+            seatCategory: null,
             successMessage: 'Booking was successfully processed',
         };
     }
