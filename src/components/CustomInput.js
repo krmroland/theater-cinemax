@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import { createArray } from '../utils';
+import { createArray } from "../utils";
 
 export default class CustomInput extends Component {
     handleChange(e) {
@@ -9,14 +9,14 @@ export default class CustomInput extends Component {
         }
     }
     renderInput() {
-        const type = this.props.type || 'text';
+        const type = this.props.type || "text";
 
         const attributes = {
-            className: 'input',
-            onChange: this.handleChange.bind(this),
+            className: "input",
+            onChange: this.handleChange.bind(this)
         };
 
-        if (type === 'select') {
+        if (type === "select") {
             return this.renderSelect(attributes);
         }
         return <input type={type} {...attributes} />;
@@ -33,16 +33,18 @@ export default class CustomInput extends Component {
     generateOptions() {
         const data = this.props.options || [];
 
+        if (Array.isArray(data)) {
+            return data.map(this.makeOption);
+        }
+
         // if we are dealing with an object, then the values will be the object
         // keys and what is displayed will be the object values
-        if (data !== null && typeof data === 'object') {
+        if (data !== null && typeof data === "object") {
             return Object.keys(data).map(key =>
                 this.makeOption(data[key], key, true)
             );
         }
-        if (Array.isArray(data)) {
-            return data.map(this.makeOption);
-        }
+
         // if data is a number, then we will iterate from o to that number
         if (+data) {
             return createArray(data, this.makeOption);
